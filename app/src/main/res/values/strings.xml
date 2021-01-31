@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ABC Cricket Academy</string>
+    <string name="academy_name">ABC Cricket Academy</string>
+    <string name="website">www.abccricket.com</string>
+    <string name="Add_Button">Add New Player</string>
+    <string name="Update_Button">Update Stats</string>
+    <string name="View_Button">View Player Stats</string>
+    <string name="Delete_Button">Delete Player</string>
 </resources>
