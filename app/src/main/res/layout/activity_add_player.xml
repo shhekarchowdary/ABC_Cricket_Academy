@@ -148,8 +148,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:importantForAutofill="no" />
+                android:hint="@string/team_id"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName" />
         </LinearLayout>
     </ScrollView>
 
