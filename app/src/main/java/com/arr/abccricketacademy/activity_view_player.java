@@ -45,11 +45,6 @@ public class activity_view_player extends AppCompatActivity {
         mGetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            }
-        });mGetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 Cursor res = DB.getdata();
                 if (res.getCount() == 0) {
                     Toast.makeText(activity_view_player.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
