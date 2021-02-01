@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class activity_view_player extends AppCompatActivity {
     EditText mPlayerid, mFirstname,mLastname,mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId;
-    Button mUpdateButton,mDeleteButton;
+    Button mUpdateButton,mDeleteButton,mGetButton;
     DBHelper DB;
 
     @Override
@@ -20,6 +20,7 @@ public class activity_view_player extends AppCompatActivity {
 
         mUpdateButton = findViewById(R.id.update_button);
         mDeleteButton = findViewById(R.id.delete_button);
+        mGetButton = findViewById(R.id.get_button);
 
         mPlayerid = findViewById(R.id.player_id);
         mFirstname = findViewById(R.id.f_name);
@@ -37,6 +38,15 @@ public class activity_view_player extends AppCompatActivity {
         mTeamId = findViewById(R.id.team_id);
 
         DB = new DBHelper(this);
+
+
+        mGetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
         mUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +76,11 @@ public class activity_view_player extends AppCompatActivity {
             }
         });
 
+
         mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
             }
         });
