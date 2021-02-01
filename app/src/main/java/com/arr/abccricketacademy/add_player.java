@@ -13,42 +13,46 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class add_player extends AppCompatActivity {
-    EditText Playerid, Firstname,Lastname, Dob,Height,Weight,Skill,Houseno,Street,City,Zipcode;
+    EditText mPlayerid, mFirstname,mLastname, mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode;
+    Button mAdd_Button;
     DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
-        Playerid = findViewById(R.id.player_id);
-        Firstname = findViewById(R.id.f_name);
-        Lastname = findViewById(R.id.viewdata);
-        Dob = findViewById(R.id.update);
-        Height = findViewById(R.id.viewdata);
-        Weight = findViewById(R.id.viewdata);
-        Skill = findViewById(R.id.viewdata);
-        Houseno = findViewById(R.id.viewdata);
-        Street= findViewById(R.id.viewdata);
-        City = findViewById(R.id.viewdata);
-        Zipcode = findViewById(R.id.viewdata);
 
-        Addfields = findViewById(R.id.delete);
+        mAdd_Button = findViewById(R.id.add_button);
+
+        mPlayerid = findViewById(R.id.player_id);
+        mFirstname = findViewById(R.id.f_name);
+        mLastname = findViewById(R.id.l_name);
+        mDob = findViewById(R.id.dob);
+        mHeight = findViewById(R.id.height);
+        mWeight = findViewById(R.id.weight);
+        mSkill = findViewById(R.id.skill);
+        mHouseno = findViewById(R.id.h_no);
+        mStreet= findViewById(R.id.street);
+        mCity = findViewById(R.id.city);
+        mZipcode = findViewById(R.id.zip_code);
+
         DB = new DBHelper(this);
-        Addfields.setOnClickListener(new View.OnClickListener() {
+
+        mAdd_Button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                String idTXT = Playerid.getText().toString();
-                String firstnameTXT = Firstname.getText().toString();
-                String lastnameTXT = Lastname.getText().toString();
-                String dobTXT = Dob.getText().toString();
-                String heightTXT = Height.getText().toString();
-                String weightTXT = Weight.getText().toString();
-                String skillTXT = Skill.getText().toString();
-                String housenoTXT = Houseno.getText().toString();
-                String streetTXT = Street.getText().toString();
-                String cityTXT = City.getText().toString();
-                String zipcodeTXT = Zipcode.getText().toString();
+                String idTXT = mPlayerid.getText().toString();
+                String firstnameTXT = mFirstname.getText().toString();
+                String lastnameTXT = mLastname.getText().toString();
+                String dobTXT = mDob.getText().toString();
+                String heightTXT = mHeight.getText().toString();
+                String weightTXT = mWeight.getText().toString();
+                String skillTXT = mSkill.getText().toString();
+                String housenoTXT = mHouseno.getText().toString();
+                String streetTXT = mStreet.getText().toString();
+                String cityTXT = mCity.getText().toString();
+                String zipcodeTXT = mZipcode.getText().toString();
                 Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT, zipcodeTXT);
                 if (checkinsertdata == true)
                     Toast.makeText(add_player.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
