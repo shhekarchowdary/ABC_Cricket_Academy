@@ -8,50 +8,62 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button Add;
-    Button ViewData;
-    Button Update;
-    Button Delete;
 
+    Button mAdd_Button;
+    Button mView_Button;
+    Button mUpdate_Button;
+    Button mDelete_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Add=findViewById(R.id.add);
-        ViewData=findViewById(R.id.viewdata);
-        Update=findViewById(R.id.update);
-        Delete=findViewById(R.id.delete);
-        Add.setOnClickListener(new View.OnClickListener() {
+
+        mAdd_Button = findViewById(R.id.add_button);
+        mView_Button = findViewById(R.id.view_button);
+        mUpdate_Button = findViewById(R.id.update_button);
+        mDelete_Button = findViewById(R.id.delete_button);
+
+        mAdd_Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(android.view.View v) {
-                Intent intent=new Intent(MainActivity.this,Add.class);
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), add_player.class);
                 startActivity(intent);
+
             }
         });
-        ViewData.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(android.view.View v) {
-                        Intent intentview=new Intent(MainActivity.this,ViewData.class);
-                        startActivity(intentview);
-                    }
 
-        } );
-        Update.setOnClickListener(new View.OnClickListener() {
+        mView_Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(android.view.View v) {
-                Intent intentupdate=new Intent(MainActivity.this,Update.class);
-                startActivity(intentupdate);
-            }
+            public void onClick(View view) {
 
-        } );
-        Delete.setOnClickListener(new View.OnClickListener() {
+                Intent intent = new Intent(getApplicationContext(), activity_view_player.class);
+                startActivity(intent);
+
+            }
+        });
+
+        mUpdate_Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(android.view.View v) {
-                Intent intentdelete=new Intent(MainActivity.this,Delete.class);
-                startActivity(intentdelete);
-            }
+            public void onClick(View view) {
 
-        } );
+                Intent intent = new Intent(getApplicationContext(), activity_view_player.class);
+                startActivity(intent);
+
+            }
+        });
+
+        mDelete_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), activity_view_player.class);
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 }
