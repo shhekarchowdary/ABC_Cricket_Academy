@@ -1,3 +1,5 @@
+package com.arr.abccricketacademy;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
+    private String name;
+
     public DBHelper(Context context) {
         super(context, "CricketAcademy.db", null, 1);
     }
@@ -21,21 +25,21 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
               DB.execSQL("drop Table if exists CricketAcademy");
     }
-    public Boolean insertuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode,)
+    public Boolean insertuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("playerid", playerid);
         contentValues.put("firstname", firstname);
-        contentValues.put("lastname", name);
+        contentValues.put("lastname", lastname);
         contentValues.put("dob", dob);
-        contentValues.put("firstname", name);
-        contentValues.put("firstname", name);
-        contentValues.put("firstname", name);
-        contentValues.put("firstname", name);
-        contentValues.put("firstname", name);
-        contentValues.put("firstname", name);
-        contentValues.put("dob", dob);
+        contentValues.put("height", height);
+        contentValues.put("weight", weight);
+        contentValues.put("skill", skill);
+        contentValues.put("houseno", houseno);
+        contentValues.put("street", street);
+        contentValues.put("city", city);
+        contentValues.put("zipcode", zipcode);
         long result=DB.insert("CricketAcademy",null,contentValues);
         if(result==-1) {
             return false;
@@ -44,13 +48,21 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateuserdata(String playerid, String name, String dob )
+    public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("playerid", playerid);
-        contentValues.put("name", name);
+        contentValues.put("firstname", firstname);
+        contentValues.put("lastname", lastname);
         contentValues.put("dob", dob);
+        contentValues.put("height", height);
+        contentValues.put("weight", weight);
+        contentValues.put("skill", skill);
+        contentValues.put("houseno", houseno);
+        contentValues.put("street", street);
+        contentValues.put("city", city);
+        contentValues.put("zipcode", zipcode);
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy where id=?", new String[]  {name});
         if(cursor.getCount()>0) {
             long result = DB.update("CricketAcademy", contentValues, "id=?", new String[]{name});
@@ -63,7 +75,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    public Boolean deleteuserdata(String playerid, String name, String dob )
+    public Boolean deleteuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy where id=?", new String[]  {name});

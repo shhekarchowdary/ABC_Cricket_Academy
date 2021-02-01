@@ -20,8 +20,8 @@ public class add_player extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
-        Playerid = findViewById(R.id.Playerid);
-        Firstname = findViewById(R.id.viewdata);
+        Playerid = findViewById(R.id.player_id);
+        Firstname = findViewById(R.id.f_name);
         Lastname = findViewById(R.id.viewdata);
         Dob = findViewById(R.id.update);
         Height = findViewById(R.id.viewdata);
