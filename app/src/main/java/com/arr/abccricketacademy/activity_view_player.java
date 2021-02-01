@@ -73,7 +73,7 @@ public class activity_view_player extends AppCompatActivity {
             }
         });
 
-        
+
 
 
 
