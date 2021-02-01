@@ -53,7 +53,7 @@ public class add_player extends AppCompatActivity {
                 String streetTXT = mStreet.getText().toString();
                 String cityTXT = mCity.getText().toString();
                 String zipcodeTXT = mZipcode.getText().toString();
-                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT, zipcodeTXT);
+                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT, zipcodeTXT);
                 if (checkinsertdata == true)
                     Toast.makeText(add_player.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
                 else

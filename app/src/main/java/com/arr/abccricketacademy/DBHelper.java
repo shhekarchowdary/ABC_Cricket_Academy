@@ -25,7 +25,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase DB, int oldVersion, int newVersion) {
               DB.execSQL("drop Table if exists CricketAcademy");
     }
-    public Boolean insertuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode)
+    public Boolean insertuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode,String academyid,String coachid,String teamid)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -40,6 +40,10 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("street", street);
         contentValues.put("city", city);
         contentValues.put("zipcode", zipcode);
+        contentValues.put("academyid", academyid);
+        contentValues.put("coachid", coachid);
+        contentValues.put("teamid", teamid);
+
         long result=DB.insert("CricketAcademy",null,contentValues);
         if(result==-1) {
             return false;
