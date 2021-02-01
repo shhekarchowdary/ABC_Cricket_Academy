@@ -101,7 +101,7 @@ public class activity_view_player extends AppCompatActivity {
                     Toast.makeText(activity_view_player.this, "Player Deleted", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(activity_view_player.this, "Player Not Deleted", Toast.LENGTH_SHORT).show();
-            }        });
+
 
             }
         });
