@@ -3,11 +3,11 @@
     <string name="academy_name">ABC Cricket Academy</string>
     <string name="website">www.abccricket.com</string>
     <string name="Add_Button">Add New Player</string>
-    <string name="Update_Button">Update Stats</string>
-    <string name="View_Button">View Player Stats</string>
+    <string name="Update_Button">Update Player Details</string>
+    <string name="View_Button">View Player Details</string>
     <string name="Delete_Button">Delete Player</string>
     <string name="add_player_heading">Enter Player Details</string>
-    <string name="view_player_heading">View Players</string>
+    <string name="view_player_heading">View/Update/Delete Player</string>
     <string name="add_player_button">Add Player</string>
     <string name="personal_details">Personal Details</string>
     <string name="Player_Id">Player ID</string>
