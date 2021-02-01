@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), activity_view_delete_update.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                startActivity(intent1);
 
             }
         });
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), activity_view_delete_update.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                startActivity(intent2);
 
             }
         });
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), activity_view_delete_update.class);
-                startActivity(intent);
+                Intent intent3 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                startActivity(intent3);
             }
         });
 

@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table CricketAcademy(playerid primarykey,name TEXT, dob TEXT ,height TEXT, weight TEXT,skill TEXT,houseno TEXT,street TEXT,city TEXT,zipcode TEXT,academyid TEXT,coachid TEXT,teamid TEXT)");
+        DB.execSQL("create Table CricketAcademy(playerid primarykey,firstname TEXT,lastname TEXT, dob TEXT ,height TEXT, weight TEXT,skill TEXT,houseno TEXT,street TEXT,city TEXT,zipcode TEXT,academyid TEXT,coachid TEXT,teamid TEXT)");
 
     }
 
@@ -52,7 +52,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
+    /*public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -100,7 +100,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy",null);
         return cursor;
     }
-
+*/
 
 }
 

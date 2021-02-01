@@ -4,16 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import android.content.ContentValues;
-import android.content.Intent;
-import android.opengl.GLDebugHelper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class add_player extends AppCompatActivity {
-    EditText mPlayerid, mFirstname,mLastname, mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId;
+    EditText mPlayerid, mFirstname,mLastname,mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId;
     Button mAdd_Button;
     DBHelper DB;
 
@@ -60,7 +57,8 @@ public class add_player extends AppCompatActivity {
                 String academyIdTXT = mAcademyId.getText().toString();
                 String coachIdTXT = mCoachId.getText().toString();
                 String teamIdTXT = mTeamId.getText().toString();
-                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT, zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+
                 if (checkinsertdata == true)
                     Toast.makeText(add_player.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
                 else
