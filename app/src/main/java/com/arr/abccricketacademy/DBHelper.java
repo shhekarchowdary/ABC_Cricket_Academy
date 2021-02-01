@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table CricketAcademy(playerid primarykey,firstname TEXT,lastname TEXT,dob TEXT ,height TEXT, weight TEXT,skill TEXT,houseno TEXT,street TEXT,city TEXT,zipcode TEXT,academyid TEXT,coachid TEXT,teamid TEXT)");
+        DB.execSQL("create Table CricketAcademy(playerid primarykey,name TEXT, dob TEXT ,height TEXT, weight TEXT,skill TEXT,houseno TEXT,street TEXT,city TEXT,zipcode TEXT,academyid TEXT,coachid TEXT,teamid TEXT)");
 
     }
 
