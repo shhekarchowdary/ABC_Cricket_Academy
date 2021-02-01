@@ -25,108 +25,131 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/Player_Id"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/Player_Id" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/f_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/First_Name"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/First_Name" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/l_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/Last_Name"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/Last_Name" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/dob" />
+                android:hint="@string/dob"
+                android:inputType="date" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/age" />
+                android:hint="@string/age"
+                android:inputType="number" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/height" />
+                android:hint="@string/height"
+                android:inputType="number" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/weight" />
+                android:hint="@string/weight"
+                android:inputType="number" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/skill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/skill"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/skill" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName9"
+                android:id="@+id/h_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/h_no"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/h_no" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName10"
+                android:id="@+id/street"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/street"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/street" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName11"
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/city"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:text="@string/city" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName12"
+                android:id="@+id/zip_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:ems="10"
+                android:hint="@string/zip_code"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/academy_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:importantForAutofill="no"
+                android:hint="@string/academy_id"
                 android:inputType="textPersonName"
-                android:text="@string/zip_code" />
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/coach_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/coach_id"
+                android:inputType="textPersonName"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/team_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:importantForAutofill="no" />
         </LinearLayout>
     </ScrollView>
 
@@ -135,14 +158,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10123119" />
+        app:layout_constraintGuide_percent="0.08071136" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.9015048" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
@@ -156,65 +179,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1504788" />
-
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/Buttons"
-        android:gravity="center"
-        android:text="@string/academy_name"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/academy_name" />
-
-    <TextView
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/Buttons"
-        android:gravity="center"
-        android:text="@string/website"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        tools:text="@string/website" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@android:drawable/title_bar"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
         android:text="@string/add_player_heading"
         android:textAlignment="center"
-        android:textColor="@color/Buttons"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/add_player_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:drawable/btn_default"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
         android:text="@string/add_player_button"
         android:textAlignment="center"
-        android:textColor="@color/Buttons"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
