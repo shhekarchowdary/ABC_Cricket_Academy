@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class activity_view_delete_update extends AppCompatActivity {
+public class activity_view_player extends AppCompatActivity {
 
 
     @Override

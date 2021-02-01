@@ -19,7 +19,7 @@ public class add_player extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
 
-        mAdd_Button = findViewById(R.id.add_button);
+        mAdd_Button = findViewById(R.id.add_player_button);
 
         mPlayerid = findViewById(R.id.player_id);
         mFirstname = findViewById(R.id.f_name);

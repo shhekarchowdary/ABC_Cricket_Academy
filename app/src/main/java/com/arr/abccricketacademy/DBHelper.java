@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private String name;
+    ///private String name;
 
     public DBHelper(Context context) {
         super(context, "CricketAcademy.db", null, 1);

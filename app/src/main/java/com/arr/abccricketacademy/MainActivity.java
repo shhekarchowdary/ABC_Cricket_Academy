@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), add_player.class);
-                startActivity(intent);
+                Intent intent5 = new Intent(getApplicationContext(), add_player.class);
+                startActivity(intent5);
 
             }
         });
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent1 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                Intent intent1 = new Intent(getApplicationContext(), activity_view_player.class);
                 startActivity(intent1);
 
             }
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent2 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                Intent intent2 = new Intent(getApplicationContext(), activity_view_player.class);
                 startActivity(intent2);
 
             }
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent3 = new Intent(getApplicationContext(), activity_view_delete_update.class);
+                Intent intent3 = new Intent(getApplicationContext(), activity_view_player.class);
                 startActivity(intent3);
             }
         });
