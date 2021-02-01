@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    ///private String name;
+    private String name;
 
     public DBHelper(Context context) {
         super(context, "CricketAcademy.db", null, 1);
@@ -52,7 +52,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
+    public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -100,7 +100,6 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy",null);
         return cursor;
     }
-*/
 
 }
 
