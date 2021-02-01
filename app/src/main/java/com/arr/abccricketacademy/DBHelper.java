@@ -52,7 +52,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode )
+    public Boolean updateuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode,String academyid,String coachid,String teamid )
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

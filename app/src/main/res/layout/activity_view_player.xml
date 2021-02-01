@@ -69,18 +69,6 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/age"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
                 android:id="@+id/height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
