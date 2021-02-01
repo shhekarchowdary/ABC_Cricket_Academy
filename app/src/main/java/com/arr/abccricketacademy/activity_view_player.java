@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class activity_view_player extends AppCompatActivity {
-    EditText mPlayerid, mFirstname,mLastname,mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId;
+    EditText mPlayerid, mFirstname,mLastname,mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId,mSearchId;
     Button mUpdateButton,mDeleteButton,mGetButton;
     DBHelper DB;
 
@@ -22,6 +22,7 @@ public class activity_view_player extends AppCompatActivity {
         mDeleteButton = findViewById(R.id.delete_button);
         mGetButton = findViewById(R.id.get_button);
 
+        mSearchId = findViewById(R.id.search);
         mPlayerid = findViewById(R.id.player_id);
         mFirstname = findViewById(R.id.f_name);
         mLastname = findViewById(R.id.l_name);
@@ -69,9 +70,9 @@ public class activity_view_player extends AppCompatActivity {
                 Boolean checkupdatedata = DB.updateuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
                 if(checkupdatedata==true)
-                    Toast.makeText(activity_view_player.this, "Entry Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_view_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(activity_view_player.this, "New Entry Not Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_view_player.this, "Player Not Updated", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -80,7 +81,27 @@ public class activity_view_player extends AppCompatActivity {
         mDeleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String idTXT = mPlayerid.getText().toString();
+                String firstnameTXT = mFirstname.getText().toString();
+                String lastnameTXT = mLastname.getText().toString();
+                String dobTXT = mDob.getText().toString();
+                String heightTXT = mHeight.getText().toString();
+                String weightTXT = mWeight.getText().toString();
+                String skillTXT = mSkill.getText().toString();
+                String housenoTXT = mHouseno.getText().toString();
+                String streetTXT = mStreet.getText().toString();
+                String cityTXT = mCity.getText().toString();
+                String zipcodeTXT = mZipcode.getText().toString();
+                String academyIdTXT = mAcademyId.getText().toString();
+                String coachIdTXT = mCoachId.getText().toString();
+                String teamIdTXT = mTeamId.getText().toString();
 
+                Boolean checkdeletedata = DB.deleteuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                if(checkdeletedata==true)
+                    Toast.makeText(activity_view_player.this, "Player Deleted", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(activity_view_player.this, "Player Not Deleted", Toast.LENGTH_SHORT).show();
+            }        });
 
             }
         });
