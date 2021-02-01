@@ -3,7 +3,6 @@ package com.arr.abccricketacademy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,15 +10,16 @@ import android.widget.Toast;
 
 public class activity_view_player extends AppCompatActivity {
     EditText mPlayerid, mFirstname,mLastname,mDob,mHeight,mWeight,mSkill,mHouseno,mStreet,mCity,mZipcode,mAcademyId,mCoachId,mTeamId;
-    Button mAdd_Button;
+    Button mUpdateButton,mDeleteButton;
     DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_player);
+        setContentView(R.layout.activity_view_player);
 
-        mAdd_Button = findViewById(R.id.add_player_button);
+        mUpdateButton = findViewById(R.id.update_button);
+        mDeleteButton = findViewById(R.id.delete_button);
 
         mPlayerid = findViewById(R.id.player_id);
         mFirstname = findViewById(R.id.f_name);
@@ -36,13 +36,12 @@ public class activity_view_player extends AppCompatActivity {
         mCoachId = findViewById((R.id.coach_id));
         mTeamId = findViewById(R.id.team_id);
 
-
         DB = new DBHelper(this);
 
-        mAdd_Button.setOnClickListener(new View.OnClickListener() {
-
+        mUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String idTXT = mPlayerid.getText().toString();
                 String firstnameTXT = mFirstname.getText().toString();
                 String lastnameTXT = mLastname.getText().toString();
@@ -57,17 +56,26 @@ public class activity_view_player extends AppCompatActivity {
                 String academyIdTXT = mAcademyId.getText().toString();
                 String coachIdTXT = mCoachId.getText().toString();
                 String teamIdTXT = mTeamId.getText().toString();
-                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                Boolean checkupdatedata = DB.updateuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
-                if (checkinsertdata == true)
-                    Toast.makeText(activity_view_player.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                if(checkupdatedata==true)
+                    Toast.makeText(activity_view_player.this, "Entry Updated", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(activity_view_player.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
-
-
+                    Toast.makeText(activity_view_player.this, "New Entry Not Updated", Toast.LENGTH_SHORT).show();
 
             }
         });
+
+        mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
+
+
     }
 }
-
