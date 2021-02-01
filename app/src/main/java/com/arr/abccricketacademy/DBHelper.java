@@ -67,6 +67,9 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("street", street);
         contentValues.put("city", city);
         contentValues.put("zipcode", zipcode);
+        contentValues.put("academyid", academyid);
+        contentValues.put("coachid", coachid);
+        contentValues.put("teamid", teamid);
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy where id=?", new String[]  {name});
         if(cursor.getCount()>0) {
             long result = DB.update("CricketAcademy", contentValues, "id=?", new String[]{name});
@@ -79,7 +82,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-    public Boolean deleteuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode)
+    public Boolean deleteuserdata(String playerid, String firstname,String lastname,String dob,String height,String weight,String skill,String houseno,String street,String city,String zipcode,String academyid,String coachid,String teamid)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select*from CricketAcademy where id=?", new String[]  {name});
