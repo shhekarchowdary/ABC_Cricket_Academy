@@ -11,18 +11,17 @@ public class MainActivity extends AppCompatActivity {
 
     Button mAdd_Button;
     Button mView_Button;
-    Button mUpdate_Button;
-    Button mDelete_Button;
+    Button mUpdate_delete_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAdd_Button = findViewById(R.id.add_button);
-        mView_Button = findViewById(R.id.view_button);
-        mUpdate_Button = findViewById(R.id.update_button);
-        mDelete_Button = findViewById(R.id.delete_button);
+        mAdd_Button = findViewById(R.id.add_main_button);
+        mView_Button = findViewById(R.id.view_main_button);
+        mUpdate_delete_Button = findViewById(R.id.update_main_button);
+
 
         mAdd_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,30 +37,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent1 = new Intent(getApplicationContext(), activity_view_player.class);
+                Intent intent1 = new Intent(getApplicationContext(), activity_view_all.class);
                 startActivity(intent1);
 
             }
         });
 
-        mUpdate_Button.setOnClickListener(new View.OnClickListener() {
+        mUpdate_delete_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent2 = new Intent(getApplicationContext(), activity_view_player.class);
+                Intent intent2 = new Intent(getApplicationContext(), activity_update_delete_player.class);
                 startActivity(intent2);
 
             }
         });
 
-        mDelete_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent3 = new Intent(getApplicationContext(), activity_view_player.class);
-                startActivity(intent3);
-            }
-        });
 
 
     }

@@ -19,7 +19,7 @@ public class add_player extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
 
-        mAdd_Button = findViewById(R.id.add_player_button);
+        mAdd_Button = findViewById(R.id.add_button);
 
         mPlayerid = findViewById(R.id.player_id);
         mFirstname = findViewById(R.id.f_name);
@@ -57,9 +57,10 @@ public class add_player extends AppCompatActivity {
                 String academyIdTXT = mAcademyId.getText().toString();
                 String coachIdTXT = mCoachId.getText().toString();
                 String teamIdTXT = mTeamId.getText().toString();
-                Boolean checkinsertdata = DB.insertuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
-                if (checkinsertdata == true)
+                Boolean checkinsertdata = DB.insertplayerdata(idTXT,firstnameTXT,lastnameTXT,dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+
+                if (checkinsertdata)
                     Toast.makeText(add_player.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(add_player.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();

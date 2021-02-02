@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_view_player">
+    tools:context=".activity_update_delete_player">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline19"
@@ -20,171 +20,255 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/enter_player_id13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Player_Id"
+                android:textSize="18sp" />
+
             <EditText
-                android:id="@+id/player_id"
+                android:id="@+id/player_idv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/Player_Id"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/First_Name"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/f_namev"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/enter_player_id17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Last_Name"
+                android:textSize="18sp" />
+
             <EditText
-                android:id="@+id/f_name"
+                android:id="@+id/l_namev"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/First_Name"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/l_name"
+            <TextView
+                android:id="@+id/enter_player_id18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/Last_Name"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
+                android:text="@string/dob"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/dob"
+                android:id="@+id/dobv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/dob"
                 android:importantForAutofill="no"
                 android:inputType="date"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/enter_player_id19"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/height"
+                android:textSize="18sp" />
+
             <EditText
-                android:id="@+id/height"
+                android:id="@+id/heightv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/height"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/weight"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/weightv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id21"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/skill"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/skillv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/h_no"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/h_nov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/street"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/streetv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id25"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/city"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/cityv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id26"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/zip_code"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/zip_codev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textColor="@color/Buttons"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/enter_player_id27"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/academy_id"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/academy_idv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
+                android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/enter_player_id28"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/coach_id"
+                android:textSize="18sp" />
+
             <EditText
-                android:id="@+id/weight"
+                android:id="@+id/coach_idv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/weight"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/skill"
+            <TextView
+                android:id="@+id/enter_player_id22"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/skill"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
+                android:layout_height="match_parent"
+                android:text="@string/team_id"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/h_no"
+                android:id="@+id/team_idv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/editTextBackground"
                 android:ems="10"
-                android:hint="@string/h_no"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/street"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/street"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/city"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/zip_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/zip_code"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/academy_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/academy_id"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/coach_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/coach_id"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="@color/Buttons"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/team_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:ems="10"
-                android:hint="@string/team_id"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColor="@color/Buttons"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -197,7 +281,7 @@
         android:background="@android:drawable/title_bar"
         android:backgroundTint="@color/colorAccent"
         android:gravity="center"
-        android:text="@string/view_player_heading"
+        android:text="@string/update_delete_player_heading"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp"
@@ -222,7 +306,7 @@
         app:layout_constraintGuide_percent="0.8508892" />
 
     <Button
-        android:id="@+id/add_player_button"
+        android:id="@+id/delete_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAccent"
@@ -238,7 +322,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline19" />
 
     <Button
-        android:id="@+id/add_player_button2"
+        android:id="@+id/update_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAccent"
@@ -290,10 +374,10 @@
 
     <EditText
         android:id="@+id/search"
-        android:layout_width="268dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@android:drawable/btn_default"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="@color/divider"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/epid"
@@ -312,6 +396,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="289dp" />
+        app:layout_constraintGuide_end="122dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
