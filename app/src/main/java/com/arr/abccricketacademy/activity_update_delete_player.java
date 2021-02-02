@@ -118,11 +118,57 @@ public class activity_update_delete_player extends AppCompatActivity {
                 String teamIdTXT = mTeamId1.getText().toString();
                 Boolean checkupdatedata = DB.updateplayerdata(idTXT,firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
-                if(checkupdatedata)
-                    Toast.makeText(activity_update_delete_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
-                else
+                if(checkupdatedata){
+
+                    mPlayerid1.setText(null);
+                    mFirstname1.setText(null);
+                    mLastname1.setText(null);
+                    mDob1.setText(null);
+                    mHeight1.setText(null);
+                    mWeight1.setText(null);
+                    mSkill1.setText(null);
+                    mHouseno1.setText(null);
+                    mStreet1.setText(null);
+                    mCity1.setText(null);
+                    mZipcode1.setText(null);
+                    mAcademyId1.setText(null);
+                    mCoachId1.setText(null);
+                    mTeamId1.setText(null);
+
+                    StringBuffer buffer = new StringBuffer();
+
+                    buffer.append("Player Id: " + idTXT + "\n");
+                    buffer.append("First Name: " + firstnameTXT + "\n");
+                    buffer.append("Last Name: " + lastnameTXT + "\n");
+                    buffer.append("Dob: " + dobTXT + "\n");
+                    buffer.append("Height: " + heightTXT + "\n");
+                    buffer.append("Weight: " + weightTXT + "\n");
+                    buffer.append("Skill: " + skillTXT + "\n");
+                    buffer.append("House No: " + housenoTXT + "\n");
+                    buffer.append("Street: " + streetTXT + "\n");
+                    buffer.append("City: " + cityTXT + "\n");
+                    buffer.append("Zip Code: " + zipcodeTXT + "\n");
+                    buffer.append("Academy Id: " + academyIdTXT + "\n");
+                    buffer.append("Coach Id: " + coachIdTXT + "\n");
+                    buffer.append("Team Id: " + teamIdTXT + "\n\n\n");
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Player updated Successfully");
+                    builder.setMessage(buffer.toString());
+                    builder.show();
+                    ///Toast.makeText(activity_update_delete_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
                     Toast.makeText(activity_update_delete_player.this, "Please Create Player with this Id first", Toast.LENGTH_SHORT).show();
 
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Error Player update");
+                    builder.setMessage("Please Create Player with this Id first");
+                    builder.show();
+                }
             }
         });
 
