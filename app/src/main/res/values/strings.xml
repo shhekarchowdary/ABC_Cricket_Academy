@@ -7,8 +7,9 @@
     <string name="View_Button">View Players</string>
     <string name="add_player_heading">Enter Player Details</string>
     <string name="update_delete_player_heading">Update/Delete Player</string>
-    <string name="view_player_heading">All Player Details</string>
+    <string name="view_player_heading">Player Details</string>
     <string name="View_all_Button">View all Players</string>
+    <string name="View_individual_button">View_individual_player</string>
     <string name="add_player_button">Add Player</string>
     <string name="personal_details">Personal Details</string>
     <string name="Player_Id">Player ID</string>

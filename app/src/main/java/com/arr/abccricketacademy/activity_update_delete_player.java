@@ -1,5 +1,6 @@
 package com.arr.abccricketacademy;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
@@ -50,10 +51,6 @@ public class activity_update_delete_player extends AppCompatActivity {
 
                 String search_id = mSearchId.getText().toString();
                 Cursor res = DB.getdata(search_id);
-                if (res.getCount() == 0) {
-                    Toast.makeText(activity_update_delete_player.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
                 while (res.moveToNext()) {
                     mPlayerid1.setText(res.getString(0));
@@ -72,34 +69,36 @@ public class activity_update_delete_player extends AppCompatActivity {
                     mTeamId1.setText(res.getString(13));
                 }
 
+                if (res.getCount() == 0) {
 
-                /*StringBuffer buffer = new StringBuffer();
-                while (res.moveToNext()) {
-                    buffer.append("Player Id :" + res.getString(0));
-                    buffer.append("First Name :" + res.getString(1));
-                    buffer.append("Last Name :" + res.getString(2));
-                    buffer.append("Dob :" + res.getString(3));
-                    buffer.append("Height :" + res.getString(4));
-                    buffer.append("Weight :" + res.getString(5));
-                    buffer.append("Skill :" + res.getString(6));
-                    buffer.append("House No :" + res.getString(7));
-                    buffer.append("Street :" + res.getString(8));
-                    buffer.append("City :" + res.getString(9));
-                    buffer.append("Zip Code :" + res.getString(10));
-                    buffer.append("Academy Id :" + res.getString(11));
-                    buffer.append("Coach Id :" + res.getString(12));
-                    buffer.append("Team Id :" + res.getString(13));
+                    Toast.makeText(activity_update_delete_player.this, "No Player Exists with this ID", Toast.LENGTH_SHORT).show();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("No Player Found");
+                    builder.setMessage("No Player Exists with this ID");
+                    builder.show();
+
+                    mPlayerid1.setText(null);
+                    mFirstname1.setText(null);
+                    mLastname1.setText(null);
+                    mDob1.setText(null);
+                    mHeight1.setText(null);
+                    mWeight1.setText(null);
+                    mSkill1.setText(null);
+                    mHouseno1.setText(null);
+                    mStreet1.setText(null);
+                    mCity1.setText(null);
+                    mZipcode1.setText(null);
+                    mAcademyId1.setText(null);
+                    mCoachId1.setText(null);
+                    mTeamId1.setText(null);
 
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
-                builder.setCancelable(true);
-                builder.setTitle("Cricket Academy");
-                builder.setMessage(buffer.toString());
-                builder.show();*/
             }
         });
 
-        /*mUpdateButton.setOnClickListener(new View.OnClickListener() {
+        mUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -117,12 +116,12 @@ public class activity_update_delete_player extends AppCompatActivity {
                 String academyIdTXT = mAcademyId1.getText().toString();
                 String coachIdTXT = mCoachId1.getText().toString();
                 String teamIdTXT = mTeamId1.getText().toString();
-                Boolean checkupdatedata = DB.updateuserdata(idTXT,firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                Boolean checkupdatedata = DB.updateplayerdata(idTXT,firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
                 if(checkupdatedata)
                     Toast.makeText(activity_update_delete_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(activity_update_delete_player.this, "Player Not Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_update_delete_player.this, "Please Create Player with this Id first", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -132,29 +131,16 @@ public class activity_update_delete_player extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String idTXT = mPlayerid1.getText().toString();
-                String firstnameTXT = mFirstname1.getText().toString();
-                String lastnameTXT = mLastname1.getText().toString();
-                String dobTXT = mDob1.getText().toString();
-                String heightTXT = mHeight1.getText().toString();
-                String weightTXT = mWeight1.getText().toString();
-                String skillTXT = mSkill1.getText().toString();
-                String housenoTXT = mHouseno1.getText().toString();
-                String streetTXT = mStreet1.getText().toString();
-                String cityTXT = mCity1.getText().toString();
-                String zipcodeTXT = mZipcode1.getText().toString();
-                String academyIdTXT = mAcademyId1.getText().toString();
-                String coachIdTXT = mCoachId1.getText().toString();
-                String teamIdTXT = mTeamId1.getText().toString();
 
-                Boolean checkdeletedata = DB.deleteuserdata(idTXT, firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                Boolean checkdeletedata = DB.deleteplayerdata(idTXT);
                 if(checkdeletedata)
                     Toast.makeText(activity_update_delete_player.this, "Player Deleted", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(activity_update_delete_player.this, "Player Not Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_update_delete_player.this, "No Player Exists with this ID", Toast.LENGTH_SHORT).show();
 
 
             }
-        });*/
+        });
 
 
 
