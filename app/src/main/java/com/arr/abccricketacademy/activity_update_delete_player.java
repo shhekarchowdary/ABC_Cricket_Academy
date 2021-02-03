@@ -3,16 +3,23 @@ package com.arr.abccricketacademy;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class activity_update_delete_player extends AppCompatActivity {
-    EditText mPlayerid1, mFirstname1,mLastname1,mDob1,mHeight1,mWeight1,mSkill1,mHouseno1,mStreet1,mCity1,mZipcode1,mAcademyId1,mCoachId1,mTeamId1,mSearchId;
+    TextView mAcademyId1;
+    EditText mPlayerid1, mFirstname1,mLastname1,mDob1,mHeight1,mWeight1,mSkill1,mHouseno1,mStreet1,mCity1,mZipcode1,mCoachId1,mTeamId1,mSearchId;
     Button mUpdateButton,mDeleteButton,mGetButton;
+    private int mDate,mMonth,mYear;
     DBHelper DB;
 
     @Override
@@ -39,6 +46,26 @@ public class activity_update_delete_player extends AppCompatActivity {
         mAcademyId1 = findViewById(R.id.academy_idv);
         mCoachId1 = findViewById((R.id.coach_idv));
         mTeamId1 = findViewById(R.id.team_idv);
+
+        mDob1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final Calendar cal = Calendar.getInstance();
+                mDate = cal.get(Calendar.DATE);
+                mMonth = cal.get(Calendar.MONTH);
+                mYear = cal.get(Calendar.YEAR);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(activity_update_delete_player.this, android.R.style.Theme_DeviceDefault, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
+                        mDob1.setText(date+"-"+month+"-"+year);
+
+                    }
+                },mYear,mMonth,mDate);
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis()-1000);
+                datePickerDialog.show();
+            }
+        });
 
         DB = new DBHelper(this);
 
@@ -90,7 +117,6 @@ public class activity_update_delete_player extends AppCompatActivity {
                     mStreet1.setText(null);
                     mCity1.setText(null);
                     mZipcode1.setText(null);
-                    mAcademyId1.setText(null);
                     mCoachId1.setText(null);
                     mTeamId1.setText(null);
 
@@ -118,56 +144,42 @@ public class activity_update_delete_player extends AppCompatActivity {
                 String teamIdTXT = mTeamId1.getText().toString();
                 Boolean checkupdatedata = DB.updateplayerdata(idTXT,firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
 
-                if(checkupdatedata){
+                if(mPlayerid() & mFirstName() & mDob() & mHeight() & mSkill() & mWeight() & mStreet() & mHouseno() & mStreet() & mCity() & mZipcode() & mCoachId() & mTeamId()) {
 
-                    mPlayerid1.setText(null);
-                    mFirstname1.setText(null);
-                    mLastname1.setText(null);
-                    mDob1.setText(null);
-                    mHeight1.setText(null);
-                    mWeight1.setText(null);
-                    mSkill1.setText(null);
-                    mHouseno1.setText(null);
-                    mStreet1.setText(null);
-                    mCity1.setText(null);
-                    mZipcode1.setText(null);
-                    mAcademyId1.setText(null);
-                    mCoachId1.setText(null);
-                    mTeamId1.setText(null);
+                    if (checkupdatedata) {
 
-                    StringBuffer buffer = new StringBuffer();
+                        StringBuffer buffer = new StringBuffer();
 
-                    buffer.append("Player Id: " + idTXT + "\n");
-                    buffer.append("First Name: " + firstnameTXT + "\n");
-                    buffer.append("Last Name: " + lastnameTXT + "\n");
-                    buffer.append("Dob: " + dobTXT + "\n");
-                    buffer.append("Height: " + heightTXT + "\n");
-                    buffer.append("Weight: " + weightTXT + "\n");
-                    buffer.append("Skill: " + skillTXT + "\n");
-                    buffer.append("House No: " + housenoTXT + "\n");
-                    buffer.append("Street: " + streetTXT + "\n");
-                    buffer.append("City: " + cityTXT + "\n");
-                    buffer.append("Zip Code: " + zipcodeTXT + "\n");
-                    buffer.append("Academy Id: " + academyIdTXT + "\n");
-                    buffer.append("Coach Id: " + coachIdTXT + "\n");
-                    buffer.append("Team Id: " + teamIdTXT + "\n\n\n");
+                        buffer.append("Player Id: " + idTXT + "\n");
+                        buffer.append("First Name: " + firstnameTXT + "\n");
+                        buffer.append("Last Name: " + lastnameTXT + "\n");
+                        buffer.append("Dob: " + dobTXT + "\n");
+                        buffer.append("Height: " + heightTXT + "\n");
+                        buffer.append("Weight: " + weightTXT + "\n");
+                        buffer.append("Skill: " + skillTXT + "\n");
+                        buffer.append("House No: " + housenoTXT + "\n");
+                        buffer.append("Street: " + streetTXT + "\n");
+                        buffer.append("City: " + cityTXT + "\n");
+                        buffer.append("Zip Code: " + zipcodeTXT + "\n");
+                        buffer.append("Academy Id: " + academyIdTXT + "\n");
+                        buffer.append("Coach Id: " + coachIdTXT + "\n");
+                        buffer.append("Team Id: " + teamIdTXT + "\n\n\n");
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
-                    builder.setCancelable(true);
-                    builder.setTitle("Player updated Successfully");
-                    builder.setMessage(buffer.toString());
-                    builder.show();
-                    ///Toast.makeText(activity_update_delete_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
-                }
+                        AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
+                        builder.setCancelable(true);
+                        builder.setTitle("Player updated Successfully");
+                        builder.setMessage(buffer.toString());
+                        builder.show();
+                        ///Toast.makeText(activity_update_delete_player.this, "Player Updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(activity_update_delete_player.this, "Please Create Player with this Id first", Toast.LENGTH_SHORT).show();
 
-                else{
-                    Toast.makeText(activity_update_delete_player.this, "Please Create Player with this Id first", Toast.LENGTH_SHORT).show();
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
-                    builder.setCancelable(true);
-                    builder.setTitle("Error Player update");
-                    builder.setMessage("Please Create Player with this Id first");
-                    builder.show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(activity_update_delete_player.this);
+                        builder.setCancelable(true);
+                        builder.setTitle("Error Player update");
+                        builder.setMessage("Please Create Player with this Id first");
+                        builder.show();
+                    }
                 }
             }
         });
@@ -192,5 +204,173 @@ public class activity_update_delete_player extends AppCompatActivity {
 
 
 
+    }
+
+    private boolean mPlayerid(){
+        String feild = mPlayerid1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mPlayerid1.setError("This field cannot be blank");
+            mPlayerid1.requestFocus();
+            return false;
+        }
+        else if(feild.length()>3){
+            mPlayerid1.setError("Player Id consists only 3 Digits");
+            mPlayerid1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mFirstName(){
+        String feild = mFirstname1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mFirstname1.setError("This field cannot be blank");
+            mFirstname1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    /*private boolean mLastname(){
+        String feild = mLastname1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mLastname1.setError("This field cannot be blank");
+            mLastname1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }*/
+
+    private boolean mDob(){
+        String feild = mDob1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mDob1.setError("This field cannot be blank");
+            mDob1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mHeight(){
+        String feild = mHeight1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mHeight1.setError("This field cannot be blank");
+            mHeight1.requestFocus();
+            return false;
+        }
+        else if(feild.length()>2){
+            mHeight1.setError("Invalid Height");
+            mHeight1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mWeight(){
+        String feild = mWeight1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mWeight1.setError("This field cannot be blank");
+            mWeight1.requestFocus();
+            return false;
+        }
+        else if(feild.length()>3){
+            mWeight1.setError("Invalid Weight");
+            mWeight1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mSkill(){
+        String feild = mSkill1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mSkill1.setError("This field cannot be blank");
+            mSkill1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mHouseno(){
+        String feild = mHouseno1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mHouseno1.setError("This field cannot be blank");
+            mHouseno1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mStreet(){
+        String feild = mStreet1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mStreet1.setError("This field cannot be blank");
+            mStreet1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mCity(){
+        String feild = mCity1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mCity1.setError("This field cannot be blank");
+            mCity1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mZipcode(){
+        String feild = mZipcode1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mZipcode1.setError("This field cannot be blank");
+            mZipcode1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mCoachId(){
+        String feild = mCoachId1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mCoachId1.setError("This field cannot be blank");
+            mCoachId1.requestFocus();
+            return false;
+        }
+        else if(feild.length()>3){
+            mCoachId1.setError("Coach Id consists only 3 Digits");
+            mCoachId1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
+    }
+
+    private boolean mTeamId(){
+        String feild = mTeamId1.getText().toString().trim();
+        if(feild.isEmpty()){
+            mTeamId1.setError("This field cannot be blank");
+            mTeamId1.requestFocus();
+            return false;
+        }
+        else if(feild.length()>3){
+            mTeamId1.setError("Team Id consists only 3 Digits");
+            mTeamId1.requestFocus();
+            return false;
+        }
+        else
+            return  true;
     }
 }

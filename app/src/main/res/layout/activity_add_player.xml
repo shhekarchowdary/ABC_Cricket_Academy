@@ -33,7 +33,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id2"
@@ -48,7 +49,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id3"
@@ -63,7 +65,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id4"
@@ -74,11 +77,13 @@
 
             <EditText
                 android:id="@+id/dob"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id5"
@@ -93,7 +98,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id6"
@@ -108,7 +114,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="number|numberDecimal" />
+                android:inputType="number|numberDecimal"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id7"
@@ -123,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id8"
@@ -138,7 +146,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id9"
@@ -153,7 +162,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id10"
@@ -168,7 +178,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id15"
@@ -184,7 +195,8 @@
                 android:backgroundTint="@color/colorAccent"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id11"
@@ -193,13 +205,17 @@
                 android:text="@string/academy_id"
                 android:textSize="18sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/academy_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?attr/editTextBackground"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="@string/academy_id_id"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/enter_player_id12"
@@ -214,7 +230,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/enter_player_id14"
@@ -229,7 +246,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
     </ScrollView>
 
