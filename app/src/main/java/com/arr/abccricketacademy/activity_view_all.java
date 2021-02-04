@@ -33,7 +33,7 @@ public class activity_view_all extends AppCompatActivity {
                 //Calling viewall function to select all data from Database using DBHelper
 
                 if (res.getCount() == 0) {
-                    Toast.makeText(activity_view_all.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity_view_all.this, "There are no Players in Database", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

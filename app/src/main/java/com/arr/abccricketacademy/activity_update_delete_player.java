@@ -266,7 +266,7 @@ public class activity_update_delete_player extends AppCompatActivity {
             mHeight1.requestFocus();
             return false;
         }
-        else if(feild.length()>2){
+        else if(feild.length()>3){
             mHeight1.setError("Invalid Height");
             mHeight1.requestFocus();
             return false;
@@ -282,7 +282,7 @@ public class activity_update_delete_player extends AppCompatActivity {
             mWeight1.requestFocus();
             return false;
         }
-        else if(feild.length()>3){
+        else if(feild.length()>4){
             mWeight1.setError("Invalid Weight");
             mWeight1.requestFocus();
             return false;

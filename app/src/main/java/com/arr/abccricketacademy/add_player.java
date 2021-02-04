@@ -57,7 +57,8 @@ public class add_player extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(add_player.this, android.R.style.Theme_DeviceDefault, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int date) {
-                    mDob.setText(date+"-"+month+"-"+year);
+                    month=month+1;
+                    mDob.setText(date + "-"+ month +"-" + year);
 
                     }
                 },mYear,mMonth,mDate);
@@ -206,7 +207,7 @@ public class add_player extends AppCompatActivity {
             mHeight.requestFocus();
             return false;
         }
-        else if(feild.length()>2){
+        else if(feild.length()>3){
             mHeight.setError("Invalid Height");
             mHeight.requestFocus();
             return false;
@@ -222,7 +223,7 @@ public class add_player extends AppCompatActivity {
             mWeight.requestFocus();
             return false;
         }
-        else if(feild.length()>3){
+        else if(feild.length()>4){
             mWeight.setError("Invalid Weight");
             mWeight.requestFocus();
             return false;
