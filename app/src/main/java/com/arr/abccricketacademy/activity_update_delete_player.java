@@ -67,7 +67,7 @@ public class activity_update_delete_player extends AppCompatActivity {
             }
         });
 
-        DB = new DBHelper(this);
+        DB = new DBHelper(this); //calling DBHelper constructor
 
 
         mGetButton.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +78,7 @@ public class activity_update_delete_player extends AppCompatActivity {
 
                 String search_id = mSearchId.getText().toString();
                 Cursor res = DB.getdata(search_id);
+                //Calling getdata function to select data from Database using DBHelper
 
                 while (res.moveToNext()) {
                     mPlayerid1.setText(res.getString(0));
@@ -143,6 +144,7 @@ public class activity_update_delete_player extends AppCompatActivity {
                 String coachIdTXT = mCoachId1.getText().toString();
                 String teamIdTXT = mTeamId1.getText().toString();
                 Boolean checkupdatedata = DB.updateplayerdata(idTXT,firstnameTXT,lastnameTXT, dobTXT,heightTXT,weightTXT,skillTXT,housenoTXT,streetTXT,cityTXT,zipcodeTXT,academyIdTXT,coachIdTXT,teamIdTXT);
+                //Calling updateplayerdata function to update data to Database using DBHelper
 
                 if(mPlayerid() & mFirstName() & mDob() & mHeight() & mSkill() & mWeight() & mStreet() & mHouseno() & mStreet() & mCity() & mZipcode() & mCoachId() & mTeamId()) {
 
@@ -191,6 +193,8 @@ public class activity_update_delete_player extends AppCompatActivity {
                 String idTXT = mPlayerid1.getText().toString();
 
                 Boolean checkdeletedata = DB.deleteplayerdata(idTXT);
+                //Calling deleteplayerdata function to delete data from Database using DBHelper
+
                 if(checkdeletedata)
                     Toast.makeText(activity_update_delete_player.this, "Player Deleted", Toast.LENGTH_SHORT).show();
                 else

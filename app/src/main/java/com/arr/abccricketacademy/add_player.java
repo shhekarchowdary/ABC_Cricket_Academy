@@ -67,7 +67,7 @@ public class add_player extends AppCompatActivity {
         });
 
 
-        DB = new DBHelper(this);
+        DB = new DBHelper(this); //calling DBHelper constructor
 
         mAdd_Button.setOnClickListener(new View.OnClickListener() {
 
@@ -92,10 +92,9 @@ public class add_player extends AppCompatActivity {
                 if(mPlayerid() & mFirstName()  & mDob() & mHeight() & mSkill() & mWeight() & mStreet() & mHouseno() & mStreet() & mCity() & mZipcode() & mCoachId() & mTeamId())
                 {
                     Boolean checkinsertdata = DB.insertplayerdata(idTXT, firstnameTXT, lastnameTXT, dobTXT, heightTXT, weightTXT, skillTXT, housenoTXT, streetTXT, cityTXT, zipcodeTXT, academyIdTXT, coachIdTXT, teamIdTXT);
-
+                    //Calling insertplayerdata function to insert data to Database using DBHelper
                     if (checkinsertdata) {
                         ///Toast.makeText(add_player.this, "Player Added Successfully", Toast.LENGTH_SHORT).show();
-
                         mPlayerid.setText(null);
                         mFirstname.setText(null);
                         mLastname.setText(null);

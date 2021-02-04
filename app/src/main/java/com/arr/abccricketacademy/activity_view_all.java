@@ -22,7 +22,7 @@ public class activity_view_all extends AppCompatActivity {
 
         mView_all_button = findViewById(R.id.view_all_button);
         mView_individual_button = findViewById(R.id.view_individual_button);
-        DB = new DBHelper(this);
+        DB = new DBHelper(this); //calling DBHelper constructor
 
         mView_all_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +30,8 @@ public class activity_view_all extends AppCompatActivity {
 
                 ///Toast.makeText(activity_update_delete_player.this, "Searching Database", Toast.LENGTH_SHORT).show();
                 Cursor res = DB.viewall();
+                //Calling viewall function to select all data from Database using DBHelper
+
                 if (res.getCount() == 0) {
                     Toast.makeText(activity_view_all.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
                     return;
